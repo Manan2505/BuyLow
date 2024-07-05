@@ -7,7 +7,6 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 const bcrypt=require('bcrypt');
-const dbconnect=require('./config/database');
 app.use(express.json());
 app.use(cors());
 
@@ -22,7 +21,7 @@ mongoose.connect("mongodb+srv://buylow:buylow@cluster0.ekc7wew.mongodb.net/");//
 
 // const path = require("path");
 const _dirname = path.dirname("");
-const buildpath = path.join(_dirname,"../e-commerce-frontend/build");
+const buildpath = path.join(_dirname,"../frontend/build");
 app.use(express.static(buildpath));
 //Image Storage Engine 
 const storage = multer.diskStorage({
