@@ -8,7 +8,12 @@ const path = require("path");
 const cors = require("cors");
 const bcrypt=require('bcrypt');
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+	{origin:["https://buy-low-b.vercel.app"],
+	 methods:["POST","GET"],
+	 credentials: true
+	}
+));
 
 // Database Connection With MongoDB
 mongoose.connect("mongodb+srv://buylow:buylow@cluster0.ekc7wew.mongodb.net/");// try{
